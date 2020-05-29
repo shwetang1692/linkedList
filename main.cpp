@@ -10,12 +10,10 @@ int main()
 {
     int A[] = {1 ,2, 3, 4, 5};
     int size = sizeof(A) / sizeof(A[0]);
-
     Linked l(A, size);
 
     int B[] = { 6, 7, 8, 9, 10 };
     int size2 = sizeof(B) / sizeof(B[0]);
-
     Linked l2(B, size2);
     
     Linked l0;
