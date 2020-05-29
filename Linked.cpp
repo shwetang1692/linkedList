@@ -172,6 +172,17 @@ Linked Linked::operator+(const Linked& l)
 	}
 	return (res);
 }
+Linked& Linked::operator+= (const Linked& l)
+{
+	Node* p = l.first;
+
+	while (p)
+	{
+		this->addAtEnd(p->val);
+		p = p->next;
+	}
+	return (*this);
+}
 Linked:: ~Linked()
 {
 	Node* p = first;
