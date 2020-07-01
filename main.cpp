@@ -2,10 +2,10 @@
 //
 #include <iostream>
 #include "Linked.h"
-
-
+#include <memory>
+#include <vector>
 using namespace std;
-
+ 
 int main()
 {
     int A[] = {1 ,2, 3, 4, 5};
@@ -23,5 +23,7 @@ int main()
     l1 += l2;
     cout << "l1 += l2: " << l1 <<"\n";
 
+    Linked lm = std::move(l1);
+    cout << "lm: " <<  lm;   
 }
 

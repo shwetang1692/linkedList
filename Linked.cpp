@@ -54,6 +54,32 @@ Linked::Linked(int* A, int size)
 	}	
 }
 
+Linked::Linked(Linked&& l)
+{
+	(*this) = std::move(l);
+}
+Linked& Linked:: operator= (Linked&& l)
+{
+	Node* tmp = l.first;
+
+	if (this->first != nullptr) this->first = nullptr;
+	while (tmp)
+	{
+		this->addAtEnd(tmp->val);
+		tmp = tmp->next;
+	}
+	l.first = nullptr;
+	tmp = l.first;
+
+	while (tmp)
+	{
+		Node* p = tmp;
+		tmp = tmp->next;
+		p = nullptr;
+	}
+	
+	return (*this);
+}
 void Linked::display()
 {
 	Node* tmp = first;

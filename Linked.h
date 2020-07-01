@@ -11,6 +11,7 @@ class Linked {
     Linked();
     Linked(int* A, int size);
     Linked(const Linked& l);
+    Linked(Linked&& l);
     void display();
     void insert(int pos, int val);
     int length();
@@ -18,6 +19,7 @@ class Linked {
     friend std::ostream& operator<< ( std::ostream& out, const Linked& l);
     Linked operator+ (const Linked& l); 
     Linked& operator= (const Linked& l);
+    Linked& operator= (Linked&& l);
     Linked& operator+= (const Linked& l);
     void addAtEnd(int val);
     ~Linked();
